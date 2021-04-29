@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
-class SingnIn extends Component {
+class SignUp extends Component {
   state = {
     email: "",
     password: "",
+    firstName: "",
+    lastname: "",
   };
 
   handleChange = (e) => {
@@ -15,11 +17,12 @@ class SingnIn extends Component {
     e.preventDefault();
     console.log(this.state);
   };
+
   render() {
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
-          <h5 className="grey-text text-darken-3">SignIn</h5>
+          <h5 className="grey-text text-darken-3">SignUp</h5>
           <div className="input-field">
             <label htmlFor="email">UserName/Eail</label>
             <input type="email" id="email" onChange={this.handleChange}></input>
@@ -33,7 +36,23 @@ class SingnIn extends Component {
             ></input>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1 z-depth-0">Login</button>
+            <label htmlFor="firstName">firstName</label>
+            <input
+              type="text"
+              id="firstName"
+              onChange={this.handleChange}
+            ></input>
+          </div>
+          <div className="input-field">
+            <label htmlFor="lastName">lastName</label>
+            <input
+              type="text"
+              id="lastName"
+              onChange={this.handleChange}
+            ></input>
+          </div>
+          <div className="input-field">
+            <button className="btn pink lighten-1 z-depth-0">SignUp</button>
           </div>
         </form>
       </div>
@@ -41,4 +60,4 @@ class SingnIn extends Component {
   }
 }
 
-export default SingnIn;
+export default SignUp;
